@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_sprite_manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_sprite_manager",
+  "parent":{
+    "name":"managers",
+    "path":"folders/game_scripts/managers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

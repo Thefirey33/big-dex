@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_noik_manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_noik_manager",
+  "parent":{
+    "name":"managers",
+    "path":"folders/game_scripts/managers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

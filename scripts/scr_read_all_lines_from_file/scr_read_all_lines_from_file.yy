@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_read_all_lines_from_file",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_read_all_lines_from_file",
+  "parent":{
+    "name":"game_scripts",
+    "path":"folders/game_scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
