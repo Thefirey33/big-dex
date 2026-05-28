@@ -6,4 +6,4 @@ This is just a side project that's being worked on.
 
 ## Requirements
 
-- Latest version of GameMaker.
+- Godot Engine 4.6.3 (Mono C#)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgmyi77vh5qmm"]
+
+[ext_resource type="Script" uid="uid://5ovuvl12ndyg" path="res://scripts/ApiPreloader.cs" id="1_wncbo"]
+
+[node name="obj_api_preloader" type="Node2D" unique_id=258650874]
+script = ExtResource("1_wncbo")

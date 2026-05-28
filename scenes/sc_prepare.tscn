@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dxdv721hyi3gn"]
+
+[ext_resource type="PackedScene" uid="uid://cgmyi77vh5qmm" path="res://objects/obj_api_preloader.tscn" id="1_6ik18"]
+
+[node name="sc_prepare" type="Node2D" unique_id=1941865634]
+
+[node name="obj_api_preloader" parent="." unique_id=258650874 instance=ExtResource("1_6ik18")]
