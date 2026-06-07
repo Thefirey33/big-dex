@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://cgmyi77vh5qmm"]
 
 [ext_resource type="Script" uid="uid://5ovuvl12ndyg" path="res://scripts/ApiPreloader.cs" id="1_wncbo"]
+[ext_resource type="SpriteFrames" uid="uid://ds324yd8cbmp3" path="res://sprites/animated/spr_loading_frames.tres" id="2_tl3rc"]
 
 [node name="obj_api_preloader" type="Node2D" unique_id=258650874]
 script = ExtResource("1_wncbo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=776035181]
+texture_filter = 1
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(3.5, 3.5)
+sprite_frames = ExtResource("2_tl3rc")
+autoplay = "default"
+speed_scale = 5.0

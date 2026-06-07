@@ -5,3 +5,30 @@
 [node name="sc_prepare" type="Node2D" unique_id=1941865634]
 
 [node name="obj_api_preloader" parent="." unique_id=258650874 instance=ExtResource("1_6ik18")]
+position = Vector2(728, 512)
+
+[node name="Control" type="Control" parent="." unique_id=795393206]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 600.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1795739878]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -36.0
+offset_right = 184.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Loading Text"
+horizontal_alignment = 1
+vertical_alignment = 1

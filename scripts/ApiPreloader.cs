@@ -22,7 +22,7 @@ public partial class ApiPreloader : Node2D
 	/// <summary>
 	/// The amount from the total COUNT of items that can be downloaded.
 	/// </summary>
-	private const int MaxDownloadPercentage = 25;
+	private const int MaxDownloadPercentage = 30;
 
 	/// <summary>
 	/// Maximum amount of stuff the Application can download.
@@ -76,7 +76,7 @@ public partial class ApiPreloader : Node2D
 				NikoDexApi.ClearNikoList();
 				_downloadTotalCount = (NikoDexApi.GetNikoCount() - NikoDexApi.GetNikoLocalDb()) / MaxDownloadPercentage;
 			
-			
+				
 				for (var i = 0; i <= _downloadTotalCount; i++)
 				{
 					int nikoId;
@@ -94,6 +94,7 @@ public partial class ApiPreloader : Node2D
 					var nikoData = downloadedNikoData.Value;
 					NikoDexApi.AddNoikToList(nikoData);
 					NikoStorageManager.StoreNiko(nikoData);
+					
 				}
 			
 				NikoStorageManager.SetLoaderState(NikoStorageManager.GameLoaderState.Compressing);
@@ -107,5 +108,17 @@ public partial class ApiPreloader : Node2D
 			// Catch exception and print it to the console.
 			GD.PrintErr(e);
 		}
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+		
+		QueueRedraw();
+	}
+
+	public override void _Draw()
+	{
+		base._Draw();
 	}
 }

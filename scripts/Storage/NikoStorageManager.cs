@@ -26,7 +26,15 @@ public static class NikoStorageManager
         Compressing,
         Done
     }
+
+    /// <summary>
+    /// The warning that will be shown in the compressed zip file to not modify.
+    /// </summary>
+    private const string ZipWarning = "Do not modify this file. This file contains data for the game's assets.";
     
+    /// <summary>
+    /// The loading state of the game.
+    /// </summary>
     private static GameLoaderState _loaderState = GameLoaderState.Uncompressing;
 
     /// <summary>
@@ -127,9 +135,10 @@ public static class NikoStorageManager
     public static void CompressAllAssets()
     {
         using var zipArchive = ZipFile.Open(ZipFilePath, ZipArchiveMode.Create);
+        zipArchive.Comment = ZipWarning;
+        
         foreach (var fileEntry in Directory.EnumerateFiles(GameFileStoragePath, "*.*").Where(s => s.EndsWith(".json") || s.EndsWith(".png")))
         {
-            GD.Print($"Compressing file: {fileEntry}...");
             zipArchive.CreateEntryFromFile(fileEntry, Path.GetFileName(fileEntry));
             
             // Delete the file after the compression is complete.
