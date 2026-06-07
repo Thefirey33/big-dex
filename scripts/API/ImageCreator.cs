@@ -15,7 +15,7 @@ public static class ImageCreator
     /// Returns the general image size used by the game's nikos.
     /// </summary>
     /// <returns></returns>
-    public static Vector2I GetGeneralImageSize()
+    private static Vector2I GetGeneralImageSize()
     {
         return new Vector2I(GeneralImageSize, GeneralImageSize);
     }
@@ -55,5 +55,23 @@ public static class ImageCreator
             return new ImageResult(null, false);
         }
         
+    }
+
+    /// <summary>
+    /// Creates a Niko image from a buffer.
+    /// </summary>
+    /// <param name="buffer">Buffer.</param>
+    /// <returns>The created ImageTexture.</returns>
+    /// <exception cref="BadImageFormatException">If the image is not formatted appropriately, this exception will be thrown.</exception>
+    public static ImageTexture CreateImageTextureFromByteBuffer(byte[] buffer)
+    {
+        var image = new Image();
+
+        if (image.LoadPngFromBuffer(buffer) != Error.Ok)
+            throw new BadImageFormatException("Cannot load image");
+
+        var imageTexture = ImageTexture.CreateFromImage(image);
+        imageTexture.SetSizeOverride(GetGeneralImageSize());
+        return imageTexture;
     }
 }
